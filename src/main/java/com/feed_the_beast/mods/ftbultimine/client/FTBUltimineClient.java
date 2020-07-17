@@ -8,11 +8,11 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
-import net.minecraft.client.renderer.Matrix4f;
+import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraftforge.client.event.GuiScreenEvent;
@@ -65,7 +65,7 @@ public class FTBUltimineClient extends FTBUltimineCommon
 
 		Minecraft mc = Minecraft.getInstance();
 		ActiveRenderInfo activeRenderInfo = mc.getRenderManager().info;
-		Vec3d projectedView = activeRenderInfo.getProjectedView();
+		Vector3d projectedView = activeRenderInfo.getProjectedView();
 
 		MatrixStack ms = event.getMatrixStack();
 		ms.push();

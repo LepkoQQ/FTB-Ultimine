@@ -11,6 +11,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fml.network.PacketDistributor;
 
 import javax.annotation.Nullable;
@@ -45,7 +46,7 @@ public class FTBUltiminePlayerData
 
 	public static RayTraceResult rayTrace(ServerPlayerEntity player)
 	{
-		double distance = player.getAttribute(PlayerEntity.REACH_DISTANCE).getValue();
+		double distance = player.getAttribute(ForgeMod.REACH_DISTANCE.get()).getValue();
 		return player.pick(player.isCreative() ? distance : distance - 0.5D, 1F, false);
 	}
 
